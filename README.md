@@ -39,7 +39,7 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
 ### Simple Script:
 
 3. `sequential_scan_and_click.scpt`:
-   - A simplified, slower script that:
+   - A simplified, slower standalone script that:
      - Scans Wavetool sequentially for matching Channel Name data each time script is run
      - Clicks channel strip with a Channel Name matching argument
     

@@ -54,8 +54,6 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
   - Terminal (if running from shell scripts)
   - Any control software calling the scripts
 
----
-
 ## Setup Instructions
 
 1. **Install [cliclick](https://github.com/BlueM/cliclick):**
@@ -104,8 +102,6 @@ Future projects:
 - Restore foreground app & cursor position
 - Group channel and multi-solo actions
 - Document Wavetool Network Protocol (TCP NSKeyedArchiver - Highly Unofficial API)
-
----
 
 ## License
 

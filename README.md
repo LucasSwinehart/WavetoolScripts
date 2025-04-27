@@ -91,11 +91,16 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
 6. **Optional:**
    - Integrate into Companion buttons or other show control triggers!
 
-## Notes and Limitations
+## Notes, Limitations, and Issues
 
 - If ChannelStrips are added, removed, or rearranged, a manual rescan is recommended
 - Scripts only tested on Wavetool 3 connected to Sennheiser EM6000 series
 - `sequential_scan_and_click.scpt` assumes scanning immediately before clicking
+
+- The following line may return an error. Homebrew install of cliclick may result in a different pathname, adjust accordingly:
+  ```bash
+     do shell script "/opt/homebrew/bin/cliclick
+  ```
 
 Future projects:
 

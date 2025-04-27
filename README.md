@@ -54,7 +54,6 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
 
 - **Wavetool 3** (or later) installed on macOS
 - **cliclick** utility installed (`brew install cliclick`) for simulated mouse movement/click
-- **Companion (Bitfocus)** (optional) to trigger solos via network buttons or cues
 - macOS Accessibility permissions granted to:
   - `Script Editor`
   - Terminal (if running from shell scripts)

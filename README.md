@@ -95,19 +95,11 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
 
 ## Notes and Limitations
 
-- If Wavetool window **size or position** changes, the system auto-detects and re-scans.
-- If ChannelStrips are **added, removed, or rearranged**, a **manual rescan** is recommended.
-- Click position accuracy depends on stable Wavetool layout.
-- `sequential_scan_and_click.scpt` assumes scanning immediately before clicking — window resizing between actions will cause inaccuracies.
+- If ChannelStrips are added, removed, or rearranged, a manual rescan is recommended
+- Scripts only tested on Wavetool 3 connected to Sennheiser EM6000 series
+- `sequential_scan_and_click.scpt` assumes scanning immediately before clicking
 
----
-
-## Project Status
-
-✅ Silent auto-rescanning implemented\
-✅ Sequential one-shot version included
-
-Future improvements:
+Future projects:
 
 - Restore foreground app & cursor position
 - Group channel and multi-solo actions

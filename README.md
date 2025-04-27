@@ -101,10 +101,7 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
   ```bash
      do shell script "/opt/homebrew/bin/cliclick m:" & clickX & "," & clickY & " && /opt/homebrew/bin/cliclick c:" & clickX & "," & clickY
   ```
-   - Run this command in Terminal to find your pathname:
-  ```bash
-     which cliclick
-  ```
+   - Run this command in Terminal to find your pathname: which cliclick
 
 Future projects:
 

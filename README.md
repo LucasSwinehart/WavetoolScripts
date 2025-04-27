@@ -76,7 +76,7 @@ brew install cliclick
    - In `solo_channel.scpt`, update the line:
 
 ```applescript
-do shell script "osascript '/Users/yourname/Documents/WavetoolControl/scan_wavetool.scpt'"
+do shell script "osascript '/path/to/scan_wavetool.scpt'"
 ```
 
 - to match the real path to your `scan_wavetool.scpt`.

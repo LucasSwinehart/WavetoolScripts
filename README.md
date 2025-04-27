@@ -83,6 +83,7 @@ do shell script "osascript '/path/to/scan_wavetool.scpt'"
 
 4. **First-Time Scan:**
 
+   - Verify both AppleScript Editor and Terminal have full accessibility permissions (System Settings > Privacy & Security > Accessibility)
    - Run `scan_wavetool.scpt` manually (Script Editor or Terminal osascript) to create the initial `WavetoolCache.txt`.
 
 5. **Trigger Solo Commands:**

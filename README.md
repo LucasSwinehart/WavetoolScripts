@@ -39,10 +39,15 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
 ### Simple Script:
 
 3. `sequential_scan_and_click.scpt`:
-   - A simple, combined script that:
+   - A simplified, slower script that:
      - Scans Wavetool sequentially for matching Channel Name data each time script is run
      - Clicks channel strip with a Channel Name matching argument
-   - Does not perform window bounds checking or silent rescans
+    
+   - To Run:
+     - Download Script, place in a secure folder, and copy pathname
+     - Run: osascript /path/to/solo_channel.scpt "YourChannelName"
+       - Replacing "/path/to/script.scpt" and YourChannelName with your pathname and targeted Wavetool channel name respectively
+
 
 ## Requirements & Dependencies
 

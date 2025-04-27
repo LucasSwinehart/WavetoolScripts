@@ -3,9 +3,7 @@
 This project allows automated remote control of Wavetool (monitoring software for wireless microphones) by programmatically selecting and soloing beltpacks based on pre-scanned screen coordinates.\
 It is built in AppleScript for macOS automation and integrates with Companion (Bitfocus) or other show control systems.
 
----
-
-## 🎯 Key Features
+## Features/Goals
 
 - **Solo beltpack channels** remotely by name
 - **Automatic window bounds detection** (position and size)
@@ -14,9 +12,7 @@ It is built in AppleScript for macOS automation and integrates with Companion (B
 - **Silent background scanning** with no operator interruption
 - **Production-ready** for theatrical, live event, and broadcast use
 
----
-
-## 🛠️ How It Works
+## How It Works
 
 ### Main Scripts:
 
@@ -44,9 +40,7 @@ It is built in AppleScript for macOS automation and integrates with Companion (B
      - Useful for basic connectivity checking or automated "ping" tests across all beltpacks
    - Does not perform window bounds checking or silent rescans
 
----
-
-## 📋 File Structure
+## File Structure
 
 | File                             | Purpose                                              |
 | -------------------------------- | ---------------------------------------------------- |
@@ -54,9 +48,7 @@ It is built in AppleScript for macOS automation and integrates with Companion (B
 | `solo_beltpack.scpt`             | Loads cache, verifies window, performs solo click    |
 | `sequential_scan_and_click.scpt` | One-shot scan and click each beltpack sequentially   |
 
----
-
-## 📋 Requirements
+## Requirements & Dependencies
 
 - **Wavetool 3** (or later) installed on macOS
 - **cliclick** utility installed (`brew install cliclick`) for simulated mouse movement/click
@@ -68,7 +60,7 @@ It is built in AppleScript for macOS automation and integrates with Companion (B
 
 ---
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 1. **Install cliclick:**
 
@@ -92,32 +84,20 @@ do shell script "osascript '/Users/yourname/Documents/WavetoolControl/scan_wavet
 
 4. **First-Time Scan:**
 
-   - Run `scan_wavetool.scpt` manually to create the initial `WavetoolCache.txt`.
+   - Run `scan_wavetool.scpt` manually (Script Editor or Terminal osascript) to create the initial `WavetoolCache.txt`.
 
 5. **Trigger Solo Commands:**
 
-   - Call `solo_beltpack.scpt` with the beltpack name as an argument:
+   - Call `solo_beltpack.scpt` with the channel name in Wavetool as an argument:
 
 ```bash
-osascript /path/to/solo_beltpack.scpt "Gordy"
+osascript /path/to/solo_beltpack.scpt "YourChannelName"
 ```
 
 6. **Optional:**
    - Integrate into Companion buttons or other show control triggers!
 
----
-
-## 🔋 Example Use Cases
-
-- Soloing wireless microphones remotely during live events
-- Building wireless monitor status dashboards
-- Automating wireless mic changeovers backstage
-- Building "panic" buttons to jump between emergency backups
-- Mass testing wireless devices for activity
-
----
-
-## 📎 Notes and Limitations
+## Notes and Limitations
 
 - If Wavetool window **size or position** changes, the system auto-detects and re-scans.
 - If ChannelStrips are **added, removed, or rearranged**, a **manual rescan** is recommended.
@@ -126,31 +106,19 @@ osascript /path/to/solo_beltpack.scpt "Gordy"
 
 ---
 
-## 🎨 Project Status
+## Project Status
 
-✅ Functional for live shows\
 ✅ Silent auto-rescanning implemented\
 ✅ Sequential one-shot version included
 
 Future improvements could include:
 
 - More robust scan-complete detection
-- Grouped beltpacks and multi-solo actions
-- Optional progress HUD during scans
+- Grouped channel and multi-solo actions
+- Optional progress bar during scans
 
 ---
 
-## 📜 License
+## License
 
 MIT License — use freely at your own risk.
-
----
-
-## 💪 Special Thanks
-
-- Wavetool developers for creating an amazing monitoring platform
-- Bitfocus Companion community for inspiring hardware/software integrations
-- Special credit to [your name here!] for system design, scripting, and optimization!
-
----
-

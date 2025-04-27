@@ -111,6 +111,7 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
 Future projects:
 
 - Restore foreground app & cursor position
+- Integrated Remote Trigger Support (currently requires local shell script)
 - Group channel and multi-solo actions
 - Document Wavetool Network Protocol (TCP NSKeyedArchiver - Highly Unofficial API)
 

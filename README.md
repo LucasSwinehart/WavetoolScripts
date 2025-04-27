@@ -33,7 +33,7 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
    - Loads `WavetoolCache.txt`
    - Brings Wavetool to the front
    - Clears currently soloed channels (`c` key)
-   - Moves the mouse and clicks the target beltpack based on stored coordinates
+   - Moves the mouse and clicks the target channel based on stored coordinates
    - If Wavetool window bounds have changed, automatically re-runs the scan and reloads the fresh positions before clicking
 
 ### Simple Script:

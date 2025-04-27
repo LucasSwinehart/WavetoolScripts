@@ -4,7 +4,7 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
 
 ## Features/Goals
 
-- Solo beltpack channels remotely by name (argument based)
+- Solo Wavetool channels remotely by name via AppleScript UI automation 
 - Automatic window bounds detection
 - Auto-rescan if Wavetool window changes (resize/move)
 

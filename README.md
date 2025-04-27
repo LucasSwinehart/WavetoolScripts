@@ -45,8 +45,8 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
     
    - To Run:
      - Download Script, place in a secure folder, and copy pathname
-     - Run: osascript /path/to/solo_channel.scpt "YourChannelName"
-       - Replacing "/path/to/script.scpt" and YourChannelName with your pathname and targeted Wavetool channel name respectively
+     - Run: osascript /path/to/script.scpt "YourChannelName"
+       - Replacing /path/to/script.scpt and YourChannelName with your pathname and targeted Wavetool channel name respectively
 
 
 ## Requirements & Dependencies

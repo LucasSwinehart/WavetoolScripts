@@ -1,16 +1,12 @@
 # Wavetool Remote Solo Control
 
-This project allows automated remote control of Wavetool (monitoring software for wireless microphones) by programmatically selecting and soloing beltpacks based on pre-scanned screen coordinates.\
-It is built in AppleScript for macOS automation and integrates with Companion (Bitfocus) or other show control systems.
+This project allows automated remote control of [Wavetool](https://wavetool.fi/) by programmatically selecting and soloing channels based on pre-scanned screen coordinates. It is built in AppleScript for macOS automation and can be integrated with Companion (Bitfocus), Qlab, etc.
 
 ## Features/Goals
 
-- **Solo beltpack channels** remotely by name
-- **Automatic window bounds detection** (position and size)
-- **Auto-rescan if Wavetool window changes** (resize/move)
-- **Hands-free operation during shows** — fully self-healing
-- **Silent background scanning** with no operator interruption
-- **Production-ready** for theatrical, live event, and broadcast use
+- Solo beltpack channels remotely by name (argument based)
+- Automatic window bounds detection
+- Auto-rescan if Wavetool window changes (resize/move)
 
 ## How It Works
 
@@ -23,7 +19,16 @@ It is built in AppleScript for macOS automation and integrates with Companion (B
    - Records each beltpack's name and click position
    - Saves the results to a simple `WavetoolCache.txt` file in your home folder
 
-2. `solo_beltpack.scpt`:
+  NOTE: The scan is fairly slow as it parses all readable text for each 'Channel Strip' sequentially and requires that the window be in the foreground. 
+  
+  A scan returns: 
+   - Channel Name
+   - Channel Number
+   - Ant A (Letter 'A' if connected)
+   - Ant B (Letter 'B' if connected)
+   - Battery Life Timer
+
+2. `solo_channel.scpt`:
 
    - Loads `WavetoolCache.txt`
    - Brings Wavetool to the front
@@ -31,22 +36,13 @@ It is built in AppleScript for macOS automation and integrates with Companion (B
    - Moves the mouse and clicks the target beltpack based on stored coordinates
    - If Wavetool window bounds have changed, automatically re-runs the scan and reloads the fresh positions before clicking
 
-### Bonus Script:
+### Simple Script:
 
 3. `sequential_scan_and_click.scpt`:
    - A simple, combined script that:
-     - Scans Wavetool
-     - Sequentially clicks through all detected ChannelStrips
-     - Useful for basic connectivity checking or automated "ping" tests across all beltpacks
+     - Scans Wavetool sequentially for matching Channel Name data each time script is run
+     - Clicks channel strip with a Channel Name matching argument
    - Does not perform window bounds checking or silent rescans
-
-## File Structure
-
-| File                             | Purpose                                              |
-| -------------------------------- | ---------------------------------------------------- |
-| `scan_wavetool.scpt`             | Scans Wavetool layout, generates `WavetoolCache.txt` |
-| `solo_beltpack.scpt`             | Loads cache, verifies window, performs solo click    |
-| `sequential_scan_and_click.scpt` | One-shot scan and click each beltpack sequentially   |
 
 ## Requirements & Dependencies
 
@@ -62,7 +58,7 @@ It is built in AppleScript for macOS automation and integrates with Companion (B
 
 ## Setup Instructions
 
-1. **Install cliclick:**
+1. **Install [cliclick](https://github.com/BlueM/cliclick):**
 
 ```bash
 brew install cliclick
@@ -70,11 +66,11 @@ brew install cliclick
 
 2. **Save Scripts:**
 
-   - Place `scan_wavetool.scpt`, `solo_beltpack.scpt`, and `sequential_scan_and_click.scpt` somewhere safe (e.g., `/Users/yourname/Documents/WavetoolControl/`)
+   - Place `scan_wavetool.scpt`, `solo_channel.scpt`, and `sequential_scan_and_click.scpt` somewhere safe (e.g., `/Users/yourname/Documents/WavetoolControl/`)
 
 3. **Edit Paths:**
 
-   - In `solo_beltpack.scpt`, update the line:
+   - In `solo_channel.scpt`, update the line:
 
 ```applescript
 do shell script "osascript '/Users/yourname/Documents/WavetoolControl/scan_wavetool.scpt'"
@@ -88,10 +84,10 @@ do shell script "osascript '/Users/yourname/Documents/WavetoolControl/scan_wavet
 
 5. **Trigger Solo Commands:**
 
-   - Call `solo_beltpack.scpt` with the channel name in Wavetool as an argument:
+   - Call `solo_channel.scpt` with the channel name in Wavetool as an argument:
 
 ```bash
-osascript /path/to/solo_beltpack.scpt "YourChannelName"
+osascript /path/to/solo_channel.scpt "YourChannelName"
 ```
 
 6. **Optional:**
@@ -111,11 +107,11 @@ osascript /path/to/solo_beltpack.scpt "YourChannelName"
 ✅ Silent auto-rescanning implemented\
 ✅ Sequential one-shot version included
 
-Future improvements could include:
+Future improvements:
 
-- More robust scan-complete detection
-- Grouped channel and multi-solo actions
-- Optional progress bar during scans
+- Restore foreground app & cursor position
+- Group channel and multi-solo actions
+- Document Wavetool Network Protocol (TCP NSKeyedArchiver - Highly Unofficial API)
 
 ---
 

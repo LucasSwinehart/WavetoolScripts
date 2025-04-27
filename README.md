@@ -99,7 +99,7 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
 
 - The following line may return an error. Homebrew install of cliclick may result in a different pathname, adjust accordingly:
   ```bash
-     do shell script "/opt/homebrew/bin/cliclick
+     do shell script "/opt/homebrew/bin/cliclick m:" & clickX & "," & clickY & " && /opt/homebrew/bin/cliclick c:" & clickX & "," & clickY
   ```
 
 Future projects:

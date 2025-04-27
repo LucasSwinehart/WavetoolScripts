@@ -19,14 +19,7 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
    - Records each beltpack's name and click position
    - Saves the results to a simple `WavetoolCache.txt` file in your home folder
 
-   - NOTE: The scan is fairly slow as it parses all readable text for each 'Channel Strip' sequentially and requires that the window be in the foreground. 
-  
-   - A scan returns: 
-      - Channel Name
-      - Channel Number
-      - Ant A (Letter 'A' if connected)
-      - Ant B (Letter 'B' if connected)
-      - Battery Life Timer
+   - NOTE: The scan is fairly slow as it parses all readable text for each 'Channel Strip' sequentially and requires that the window be in the foreground. DO NOT move or adjust the window while the scan script is running.
 
 2. `solo_channel.scpt`:
 

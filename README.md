@@ -22,11 +22,11 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
    - NOTE: The scan is fairly slow as it parses all readable text for each 'Channel Strip' sequentially and requires that the window be in the foreground. 
   
    - A scan returns: 
-    - Channel Name
-    - Channel Number
-    - Ant A (Letter 'A' if connected)
-    - Ant B (Letter 'B' if connected)
-    - Battery Life Timer
+      - Channel Name
+      - Channel Number
+      - Ant A (Letter 'A' if connected)
+      - Ant B (Letter 'B' if connected)
+      - Battery Life Timer
 
 2. `solo_channel.scpt`:
 

@@ -87,11 +87,12 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
 - Scripts only tested on Wavetool 3 connected to Sennheiser EM6000 series
 - `sequential_scan_and_click.scpt` assumes scanning immediately before clicking
 
-- This line may return an error. Homebrew install of cliclick may result in a different pathname, adjust accordingly:
+- This line may return an error. Homebrew install of cliclick may result in a different pathname, adjust both paths accordingly:
   ```bash
      do shell script "/opt/homebrew/bin/cliclick m:" & clickX & "," & clickY & " && /opt/homebrew/bin/cliclick c:" & clickX & "," & clickY
   ```
    - Run this command in Terminal to find your pathname: which cliclick
+   - On older macs it's likely: /usr/local/bin/cliclick
 
 Future projects:
 

@@ -19,14 +19,7 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
    - Records each beltpack's name and click position
    - Saves the results to a simple `WavetoolCache.txt` file in your home folder
 
-   - NOTE: The scan is fairly slow as it parses all readable text for each 'Channel Strip' sequentially and requires that the window be in the foreground. 
-  
-   - A scan returns: 
-      - Channel Name
-      - Channel Number
-      - Ant A (Letter 'A' if connected)
-      - Ant B (Letter 'B' if connected)
-      - Battery Life Timer
+   - NOTE: The scan is fairly slow as it parses all readable text for each 'Channel Strip' sequentially and requires that the window be in the foreground. DO NOT move or adjust the window while the scan script is running.
 
 2. `solo_channel.scpt`:
 
@@ -39,7 +32,7 @@ This project allows automated remote control of [Wavetool](https://wavetool.fi/)
 ### Simple Script:
 
 3. `sequential_scan_and_click.scpt`:
-   - A simplified, slower standalone script that:
+   - A simplified, much slower standalone script that:
      - Scans Wavetool sequentially for matching Channel Name data each time script is run
      - Clicks channel strip with a Channel Name matching argument
     
@@ -69,25 +62,15 @@ brew install cliclick
 
 2. **Save Scripts:**
 
-   - Place `scan_wavetool.scpt`, `solo_channel.scpt`, and `sequential_scan_and_click.scpt` somewhere safe (e.g., `/Users/yourname/Documents/WavetoolControl/`)
+   - Place `scan_wavetool.scpt`, and `solo_channel.scpt` somewhere safe (e.g., `/Users/yourname/Documents/WavetoolControl/`)
 
-3. **Edit Paths:**
-
-   - In `solo_channel.scpt`, update the line:
-
-```applescript
-do shell script "osascript '/path/to/scan_wavetool.scpt'"
-```
-
-- to match the real path to your `scan_wavetool.scpt`.
-
-4. **First-Time Scan:**
+3. **First-Time Scan:**
 
    - Verify both AppleScript Editor and Terminal have full accessibility permissions
       - (System Settings > Privacy & Security > Accessibility)
    - Run `scan_wavetool.scpt` manually (Script Editor or Terminal osascript) to create the initial `WavetoolCache.txt`.
 
-5. **Trigger Solo Commands:**
+4. **Trigger Solo Commands:**
 
    - Call `solo_channel.scpt` with the channel name in Wavetool as an argument:
 
@@ -96,7 +79,7 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
 ```
 
 6. **Optional:**
-   - Integrate into Companion buttons or other show control triggers!
+   - Integrate into Companion buttons or Qlab triggers via shell script!
 
 ## Notes, Limitations, and Issues
 

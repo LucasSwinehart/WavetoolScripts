@@ -78,9 +78,8 @@ brew install cliclick
 osascript /path/to/solo_channel.scpt "YourChannelName"
 ```
 
-6. **Optional:**
-   - Integrate into Companion buttons or Qlab triggers via shell script!
-     
+6. **Add Companion Trigger (Optional):**
+
    - Create a shell (.sh) script in the following format
 ```bash
 #!/bin/bash

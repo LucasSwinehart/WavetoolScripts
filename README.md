@@ -80,6 +80,18 @@ osascript /path/to/solo_channel.scpt "YourChannelName"
 
 6. **Optional:**
    - Integrate into Companion buttons or Qlab triggers via shell script!
+     
+   - Create a shell (.sh) script in the following format
+```bash
+#!/bin/bash
+osascript /path/to/solo_channel.scpt "YourChannelName"
+```
+   - Make the shell scritps executable (tagets all .sh files in dir)
+
+```bash
+chmod +x /path/to/shellScripts/*.sh
+```
+   - Create a 'internal: System: Run shell path (local)' action in Companion with the shell script path as your target.
 
 ## Notes, Limitations, and Issues
 
